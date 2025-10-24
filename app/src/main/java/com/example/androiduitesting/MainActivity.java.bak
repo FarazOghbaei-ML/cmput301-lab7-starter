@@ -25,17 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        android.widget.ListView __lv = findViewById(R.id.city_list);
-        if (__lv != null) {
-            __lv.setOnItemClickListener((parent, view, position, id) -> {
-                Object o = parent.getItemAtPosition(position);
-                String city = (o instanceof String) ? (String) o : String.valueOf(o);
-                android.content.Intent intent = new android.content.Intent(MainActivity.this, ShowActivity.class);
-                intent.putExtra("city_name", city);
-                startActivity(intent);
-            });
-        }
-
         nameField = findViewById(R.id.field_nameEntry);
         newName  = findViewById(R.id.editText_name);
 
